@@ -3,6 +3,8 @@ const error = document.getElementById('error');
 
 const searchResult = document.getElementById("search-result");
 
+const totalBooks = document.getElementById('total');
+
 document.getElementById('search').addEventListener('click',function(){
 
   const searchField = document.getElementById("search-input");
@@ -11,6 +13,7 @@ document.getElementById('search').addEventListener('click',function(){
     error.innerText = "search field can not be empty"
     alert('Hello,are you mad!! enter something')
     searchResult.innerHTML = '';
+    totalBooks.innerText = '' ;
   }
   else{
     error.innerText = '' ;
@@ -33,9 +36,8 @@ const searchBook = (searchText) => {
 // ----------display search result data----------
 const displaySearchResult = (myBooks) => {
   searchResult.innerText = "";
-  const totalBooks = document.getElementById('total');
   totalBooks.innerHTML = `<h3 class="text-center text-secondary">Total books found ${myBooks.docs.length}</h3>`;
-  myBooks.docs.forEach((book) =>{
+  myBooks.docs.slice(0,15).forEach((book) =>{
   let code = book.cover_i;
   const div = document.createElement("div");
   div.classList.add("col");
