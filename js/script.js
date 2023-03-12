@@ -1,9 +1,12 @@
-
 //------------- handle search button-----------
-const searchBook = () => {
+document.getElementById('search').addEventListener('click',function(){
+
   const searchField = document.getElementById("search-input");
   const searchText = searchField.value;
+  searchBook(searchText);
+})
 
+const searchBook = (searchText) => {
   // ----------load data----------
   const url = `https://openlibrary.org/search.json?q=${searchText}`;
   fetch(url)
