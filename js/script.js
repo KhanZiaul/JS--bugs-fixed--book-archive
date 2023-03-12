@@ -27,7 +27,7 @@ const displaySearchResult = (myBooks) => {
          
             <h5 class="card-title"> Name: ${book.title?book.title : 'No Name Found'}</h5>
             <h6> Author: ${book.author_name}</h6>
-            <p>Publisher: <small> ${book.publisher} </small></p>
+            <p>Publisher: <small> ${book.publisher?book.publisher[0]:'No publisher found'} </small></p>
             <small> First Published Year: ${book.first_publish_year}</small>
           </div>
       </div>
