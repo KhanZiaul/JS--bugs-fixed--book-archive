@@ -1,7 +1,7 @@
 
 //------------- handle search button-----------
 const searchBook = () => {
-  const searchField = document.getElementById("search-field");
+  const searchField = document.getElementById("search-input");
   const searchText = searchField.value;
 
   // ----------load data----------
