@@ -14,6 +14,7 @@ document.getElementById('search').addEventListener('click',function(){
   }
   else{
     error.innerText = '' ;
+    searchField.value = '' ;
     searchBook(searchText);
   }
 })
